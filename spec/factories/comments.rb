@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :comment do
-    user nil
-    movie nil
-    rating 1
-    content "MyText"
+    user
+    movie
+    rating { Faker::Number.between(1, 5) }
+    content { Faker::Lorem.sentence(3, true) }
   end
 end
