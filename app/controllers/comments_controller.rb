@@ -9,21 +9,19 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:notice] = "Comment added"
-      redirect_to @movie
     else
       flash[:alert] = "You can only add 1 comment per movie"
-      render "movies/show"
     end
+    redirect_to @movie
   end
 
   def destroy
     if @comment.destroy
       flash[:notice] = "Comment removed"
-      redirect_to @movie
     else
       flash[:alert] = @comment.errors.full_messages.join(", ")
-      render "movies/show"
     end
+    redirect_to @movie
   end
 
   private
