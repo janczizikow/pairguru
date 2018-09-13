@@ -2,10 +2,12 @@ source "https://rubygems.org"
 
 gem "rails", "5.2"
 
+gem "autoprefixer-rails"
 gem "annotate"
 gem "bootstrap-sass"
 gem "devise"
 gem "draper"
+gem 'font-awesome-sass'
 gem "haml-rails"
 gem "jquery-rails"
 gem "sass-rails"
