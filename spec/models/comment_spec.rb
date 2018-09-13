@@ -9,7 +9,8 @@ RSpec.describe Comment, type: :model do
 
   it "allows only one comment per movie/user" do
     movie = create(:movie)
-    create(:comment, movie: movie)
-    expect(build(:comment, movie: movie)).not_to be_valid
+    user = create(:user)
+    create(:comment, movie: movie, user: user)
+    expect(build(:comment, movie: movie, user: user)).not_to be_valid
   end
 end
