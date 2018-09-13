@@ -3,3 +3,12 @@
   = @movie.description
 - if user_signed_in?
   %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default'
+
+%h2 Comments
+- @movie.comments.each do |comment|
+  = render "comments/show", movie: @movie, comment: comment.decorate
+%h3 Add review
+- if user_signed_in?
+  = render "comments/new"
+- else
+  %p= "You must #{link_to 'Log in', new_user_session_path} to add a comment".html_safe
