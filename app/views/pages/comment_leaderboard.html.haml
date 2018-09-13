@@ -1,2 +1,15 @@
-%h1 Pages#comment_leaderboard
-%p Find me in app/views/pages/comment_leaderboard.html.haml
+.row
+  .col-md-8.col-md-offset-2.col-lg-8.col-lg-offset-2
+    %h1.text-center Comments leaderboard
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Rank
+          %th User name
+          %th Comments count
+      %tbody
+        - @users.each_with_index do |user, i|
+          %tr
+            %td= i + 1
+            %td= user.name
+            %td= user.comments_count
