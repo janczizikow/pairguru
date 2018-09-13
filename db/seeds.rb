@@ -82,3 +82,18 @@ if Movie.count < 100
     )
   end
 end
+
+Rails.logger.info "Creating coments..."
+users = User.all
+users.each do |user|
+  n = Faker::Number.between(1, 20)
+  movies = Movie.order(Arel.sql('random()')).limit(n)
+  movies.each do |movie|
+    Comment.create!(
+      user: user,
+      movie: movie,
+      rating: Faker::Number.between(1, 5),
+      content: Faker::Lorem.paragraph(5)
+    )
+  end
+end

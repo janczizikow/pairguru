@@ -10,6 +10,7 @@ gem "draper"
 gem 'font-awesome-sass'
 gem "haml-rails"
 gem "jquery-rails"
+gem "puma"
 gem "sass-rails"
 gem "simple_form"
 gem "sqlite3"

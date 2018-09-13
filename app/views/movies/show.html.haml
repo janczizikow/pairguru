@@ -5,7 +5,9 @@
   %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default'
 
 %h2 Comments
-- @movies.each do |comment|
+- if @comments.length.zero?
+  %p No comments yet.
+- @comments.each do |comment|
   = render "comments/show", movie: @movie, comment: comment.decorate
 %h3 Add review
 - if user_signed_in?
