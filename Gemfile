@@ -22,6 +22,7 @@ group :development do
   gem "bullet"
   gem "guard"
   gem "letter_opener"
+  gem "pry-byebug"
   gem "pry-rails"
   gem "rails-erd"
   gem "spring"
