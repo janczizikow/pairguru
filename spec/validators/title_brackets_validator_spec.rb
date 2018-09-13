@@ -86,6 +86,7 @@ class TitleBracketsValidator < ActiveModel::Validator
   private
 
   def check_brackets(title)
+    # This would still not work for e.g.: The Fellowship of the Ring [2001)
     return false unless title.match?(/(\(.+\)|\[.+\]|\{.+\})/)
     i = 0
     open_count = 0
