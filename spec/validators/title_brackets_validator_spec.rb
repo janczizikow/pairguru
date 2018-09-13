@@ -79,10 +79,23 @@ end
 class TitleBracketsValidator < ActiveModel::Validator
   def validate(record)
     if record.title.match?(/[\(\)\{\}\[\]]/)
-      unless /(\(\w+\)|\[\w+\]|\{\w+\})$/.match?(record.title.delete(" "))
-        record.errors[:base] << "The title is invalid"
-      end
+      record.errors[:base] << "The title is invalid" unless check_brackets(record.title)
     end
+  end
+
+  private
+
+  def check_brackets(title)
+    return false unless title.match?(/(\(.+\)|\[.+\]|\{.+\})/)
+    i = 0
+    open_count = 0
+    close_count = 0
+    while i < title.length
+      open_count += 1 if title[i].match?(/(\(|\[|\{)/)
+      close_count += 1 if title[i].match?(/(\)|\]|\})/)
+      i += 1
+    end
+    open_count == close_count
   end
 end
 
