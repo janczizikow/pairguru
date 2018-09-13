@@ -1,0 +1,7 @@
+%h3 Add a comment
+= simple_form_for([@movie, @comment]) do |f|
+  .form-group
+    = f.label :rating
+    = f.select :rating, (1..5).to_a, {},  class: 'form-control'
+  = f.input :content
+  = f.submit 'Add comment', class: 'btn btn-sm btn-default'

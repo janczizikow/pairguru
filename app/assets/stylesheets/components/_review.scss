@@ -1,0 +1,13 @@
+.review {
+  padding: 1.5rem 0;
+
+  &__heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__rating {
+    color:#ffc107;
+  }
+}

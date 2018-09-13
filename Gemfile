@@ -2,13 +2,16 @@ source "https://rubygems.org"
 
 gem "rails", "5.2"
 
+gem "autoprefixer-rails"
 gem "annotate"
 gem "bootstrap-sass"
 gem "devise"
 gem "draper"
+gem 'font-awesome-sass'
 gem "haml-rails"
 gem "jquery-rails"
 gem "sass-rails"
+gem "simple_form"
 gem "sqlite3"
 gem "uglifier"
 
@@ -21,6 +24,7 @@ group :development do
   gem "bullet"
   gem "guard"
   gem "letter_opener"
+  gem "pry-byebug"
   gem "pry-rails"
   gem "rails-erd"
   gem "spring"

@@ -1,0 +1,11 @@
+.review
+  .media
+    .media-body
+      .review__heading
+        .media-heading
+          %h4= comment.user.name
+          = render "comments/stars", rating: comment.rating
+        %p= comment.created_at
+      %p= comment.content
+      - if current_user == comment.user
+        = link_to "Remove", movie_comment_path(movie, comment), method: :delete, data: {confirm: "Are you sure?"}

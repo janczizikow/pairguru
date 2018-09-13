@@ -1,0 +1,6 @@
+.d-flex
+  - (1..5).to_a.each do |n|
+    - if n <= rating
+      %i.fas.fa-star.review__rating
+    - else
+      %i.fas.fa-star.text-muted
