@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   root "home#welcome"
+  get "comments-leaderboard", to: "pages#comment_leaderboard", as: :leaderboard
+
   resources :genres, only: :index do
     member do
       get "movies"
