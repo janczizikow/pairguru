@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
       flash[:notice] = "Comment removed"
       redirect_to @movie
     else
-      flash[:alert] = @comment.errors.full_messages
+      flash[:alert] = @comment.errors.full_messages.join(", ")
       render "movies/show"
     end
   end
