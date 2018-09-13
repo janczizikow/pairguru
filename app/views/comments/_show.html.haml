@@ -4,7 +4,7 @@
       .review__heading
         .media-heading
           %h4= comment.user.name
-          %p= comment.rating
+          = render "comments/stars", rating: comment.rating
         %p= comment.created_at
       %p= comment.content
       - if current_user == comment.user
